@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Giriş Yap - Oyun Haberleri{% endblock %}
+
+{% block content %}
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+
+        <!-- Icon -->
+        <div class="fadeIn first">
+            <img src="/static/images/login.png" id="icon" alt="User Icon" style="width: 20%; height: auto;" />
+        </div>
+
+
+        <!-- Login Form -->
+        <form>
+            <input type="text" id="login" class="fadeIn second" name="login" placeholder="Username">
+            <input type="text" id="login" class="fadeIn third" name="password" placeholder="E-mail">
+
+            <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
+            in
+
+            <input type="submit" class="fadeIn fourth" value="SignUp">
+        </form>
+
+
+        <!-- Remind Passowrd -->
+
+        <div id="formFooter">
+            <a class="underlineHover" href="login.html">Login</a>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
