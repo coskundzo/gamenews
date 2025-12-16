@@ -37,14 +37,21 @@
                     <input class="form-control me-2" type="search" placeholder="Ara..." aria-label="Search">
                 </form>
 
-                <!-- Login Icon -->
-                <a href="login.html" class="btn btn-outline-light d-flex align-items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                        class="bi bi-person" viewBox="0 0 16 16">
-                        <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" />
-                        <path d="M14 14s-1-4-6-4-6 4-6 4 1 1 6 1 6-1 6-1z" />
-                    </svg>
-                </a>
+                <!-- Login/Username -->
+                {% if username %}
+                    <div class="d-flex align-items-center">
+                        <span class="text-light me-3">Hoşgeldin, {{ username }}</span>
+                        <a href="/logout" class="btn btn-outline-light">Çıkış</a>
+                    </div>
+                {% else %}
+                    <a href="login.html" class="btn btn-outline-light d-flex align-items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            class="bi bi-person" viewBox="0 0 16 16">
+                            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" />
+                            <path d="M14 14s-1-4-6-4-6 4-6 4 1 1 6 1 6-1 6-1z" />
+                        </svg>
+                    </a>
+                {% endif %}
             </div>
         </div>
     </nav>
