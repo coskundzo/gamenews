@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Canlı Yayın - Oyun Haberleri{% endblock %}
+
+{% block content %}
+{% if username %}
+<div class="container my-5">
+
+    <h1 class="mb-4 text-center">🔴 Canlı Yayın</h1>
+
+    <p class="lead text-center text-muted mb-4">
+        Hoşgeldin {{ username }}! Canlı yayınımızı izleyebilirsin.
+    </p>
+
+    <hr class="my-4">
+
+    <!-- YouTube Embed -->
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="ratio ratio-16x9 shadow-lg rounded">
+                <iframe src="https://www.youtube.com/embed/dk_uf4o2atY" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <p class="text-muted">
+            <i class="bi bi-info-circle"></i> Yayın sırasında sohbete katılabilir ve sorularınızı sorabilirsiniz!
+        </p>
+    </div>
+
+</div>
+{% else %}
+<div class="container my-5">
+    <div class="alert alert-warning text-center" role="alert">
+        Canlı yayını izlemek için lütfen <a href="/login.html" class="alert-link">giriş yapın</a>.
+    </div>
+</div>
+{% endif %}
+{% endblock %}

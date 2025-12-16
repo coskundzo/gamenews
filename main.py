@@ -48,6 +48,14 @@ def faqs():
     username = flask_session.get('username')
     return render_template('faqs.html', username=username)
 
+@app.route('/live.html')
+def live():
+    username = flask_session.get('username')
+    if not username:
+        flash('Canlı yayını izlemek için giriş yapmalısınız!', 'warning')
+        return redirect(url_for('login'))
+    return render_template('live.html', username=username)
+
 
 # Login işlemi için hem GET hem POST destekleyen route
 @app.route('/login.html', methods=['GET', 'POST'])
